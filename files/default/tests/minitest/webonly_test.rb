@@ -1,7 +1,6 @@
-#require File.expand_path('../support/helpers', __FILE__)
-
+require File.expand_path('../helpers', __FILE__)
 describe 'magento::webonly' do
-
+include Helpers::magento
 
 
  it 'creates the MY OWN directory' do
