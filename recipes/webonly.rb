@@ -7,10 +7,21 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe "apache2"
 node.set['apache']['default_site_enabled']=true
+include_recipe "apache2"
+
 
 if (node.has_key?("magento") && node.magento.has_key?("support_remote_jenkins_webserver_restart") && node.magento.support_remote_jenkins_webserver_restart == 'true')
+
+#added because of test kitchen complains
+
+directory "/etc/chef" do
+
+  owner 'root'
+  group 'root'
+  action :create
+
+end
 
 template "restart webserver run list json" do
   source "restart_webserver.json.erb"
