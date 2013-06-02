@@ -15,8 +15,8 @@ php-pear
 libapache2-mod-php5
 }.each do |expected_package|
 
-  it 'installs "#{expected_package}"' do
-    package("#{expected_package}").must_be_installed
+  it 'installs #{expected_package}' do
+    package(expected_package).must_be_installed
   end
 end
 
