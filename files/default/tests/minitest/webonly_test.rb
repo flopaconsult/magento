@@ -11,9 +11,7 @@ include Helpers::Apache
   it 'checks if file /etc/chef/restart_webserver.json. created by template exists' do 
       file("/etc/chef/restart_webserver.json").must_exist
   end
-    it 'checks if magento database is created' do 
-      exist_magento_db
-	end
+
   
     it 'listens on port 80' do
     apache_configured_ports.must_include(80)
