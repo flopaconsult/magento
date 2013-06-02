@@ -1,5 +1,5 @@
 require File.expand_path('../helpers', __FILE__)
-describe 'magento::webonly' do
+describe 'magento::php-multi' do
 include Helpers::Magento
 include Helpers::Apache
 
