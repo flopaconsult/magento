@@ -4,8 +4,12 @@ include Helpers::Magento
 include Helpers::Apache
 
 
- it 'creates the MY OWN directory' do
+  it 'creates the MY OWN directory' do
     directory("/etc/chef").must_exist
+  end
+  
+  it 'checks if file /etc/chef/restart_webserver.json. created by template exists' do 
+      file("/etc/chef/restart_webserver.json").must_exist
   end
   
     it 'listens on port 80' do
