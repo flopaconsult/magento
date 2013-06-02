@@ -13,8 +13,9 @@ include Helpers::Apache
   end
 
 %w{
-headers
-rewrite
+core
+http
+php5
 }.each do |expected_module|
 
   describe "apache2::mod_#{expected_module}" do
