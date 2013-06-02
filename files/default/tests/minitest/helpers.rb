@@ -51,10 +51,6 @@ module Apache
         end
       )
     end
-	
-	def exist_magento_db
-	 return  `"mysql -h#{mysql_host} -u#{mysql_user} -p#{mysql_pwd} -e 'show databases' | grep magentodb"`.equals("magento")
-	end 
 
     def ran_recipe?(recipe)
       if Chef::VERSION < "11.0"
