@@ -16,9 +16,10 @@ include Helpers::Apache
     apache_configured_ports.must_include(80)
   end
   
-  %w{
-  mysql-client libmysqlclient-dev
-  }each do |mysql_client_package|
+%w{
+mysql-client
+libmysqlclient-dev
+}.each do |mysql_client_package|
   
   it "installs #{mysql_client_package}" do
     package(mysql_client_package).must_be_installed
