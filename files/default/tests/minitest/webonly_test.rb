@@ -4,7 +4,7 @@ include Helpers::Magento
 include Helpers::Apache
 
 
-  it 'creates the MY OWN directory' do
+  it 'creates the MY OWN /etc/chef directory' do
     directory("/etc/chef").must_exist
   end
   
@@ -13,7 +13,7 @@ include Helpers::Apache
   end
 
   
-    it 'listens on port 80' do
+    it 'listens continuously on port 80' do
     apache_configured_ports.must_include(80)
   end
   
